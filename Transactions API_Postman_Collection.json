@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "c707804a-eb77-46f9-9ea4-53137d407b04",
+		"name": "Transactions API",
+		"description": "API collection for Laravel Transactions project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37444456"
+	},
+	"item": [
+		{
+			"name": "Calculate User  closing Balances in 90 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/balances/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"balances",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This Api is used to get the user closing balance in last 90 days"
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Last 30 Days Income",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/income/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"income",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This is Api is used to get the income of the user in last 30 days."
+			},
+			"response": []
+		},
+		{
+			"name": "Calculate Debit Transaction Count in 30 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/debit-count/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"debit-count",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This Api is used to get the count of Debit transaction in last 30 days"
+			},
+			"response": []
+		},
+		{
+			"name": "Sum of Debit Amount on Weekend",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/debit-amount-weekend/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"debit-amount-weekend",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This Api is used to get the user Debit Transaction sum in  \nweekend Transaction ( Friday,Saturday,Sunday) ."
+			},
+			"response": []
+		},
+		{
+			"name": "Sum of Income Above Amount greater than 15",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/income-above-amount/:userId",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"income-above-amount",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "1"
+						}
+					]
+				},
+				"description": "This Api is used to get Transaction sum of all the Credit Transaction which is greater than 15."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user_id",
+			"value": "1194398"
+		}
+	]
+}

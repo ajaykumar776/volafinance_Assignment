@@ -11,8 +11,6 @@
 2. Install dependencies:
     ```bash
     composer install
-    npm install
-    npm run dev
     ```
 
 3. Set up environment variables:
@@ -27,12 +25,35 @@
     php artisan db:seed --class=TransactionsTableSeeder
     ```
 
-## API Endpoints
+## Technology Stack
 
-- **Calculate User Closing Balance**: `/api/transactions/closing-balance/{userId}`
-- **Calculate 90 Days Average Closing Balance**: `/api/transactions/90-days-closing-balance/{userId}`
-- **Calculate Last 30 Days Income**: `/api/transactions/30-days-income/{userId}`
+- **Laravel**: 10.4
+- **PHP**: 8.1
+- **Tailwind CSS**: For frontend styling
+- **REST API**: For API endpoints
 
-## License
+## PostMan Collections file Attached in root folder
 
-This project is licensed under the MIT License.
+- Transactions API_Postman_Collection.json
+
+## API Endpoints 
+
+- **Calculate User Closing Balance**: `/balances/{userId}`
+  - **Method**: `GET`
+  - **Description**: Calculates the user's closing balance including daily closing balances and average balances over different periods.
+
+- **Calculate Last 30 Days Income**: `/income/{userId}`
+  - **Method**: `GET`
+  - **Description**: Calculates the total income for the last 30 days for the specified user.
+
+- **Calculate Debit Transaction Count**: `/debit-count/{userId}`
+  - **Method**: `GET`
+  - **Description**: Retrieves the count of debit transactions for the last 30 days for the specified user.
+
+- **Calculate Debit Amount on Weekends**: `/debit-amount-weekend/{userId}`
+  - **Method**: `GET`
+  - **Description**: Sums up the amount of debit transactions that occurred on weekends for the last 30 days for the specified user.
+
+- **Calculate Income Above Amount 15**: `/income-above-amount_15/{userId}`
+  - **Method**: `GET`
+  - **Description**: Calculates the total income amounts that are greater than 15 for the specified user.

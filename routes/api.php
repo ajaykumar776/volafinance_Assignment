@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BalanceController;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -14,11 +15,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
-Route::get('transactions/closing-balance', [TransactionController::class, 'calculateClosingBalance']);
-Route::get('transactions/90-days-closing-balance', [TransactionController::class, 'calculate90DaysClosingBalance']);
-Route::get('transactions/30-days-income', [TransactionController::class, 'calculate30DaysIncome']);
+Route::get('balances/{userId}', [BalanceController::class, 'calculateBalances']);
+Route::get('income/{userId}', [BalanceController::class, 'calculateIncome']);
+Route::get('debit-count/{userId}', [BalanceController::class, 'calculateDebitTransactionCount']);
+Route::get('debit-amount-weekend/{userId}', [BalanceController::class, 'sumDebitAmountWeekend']);
+Route::get('income-above-amount_15/{userId}', [BalanceController::class, 'sumIncomeAboveAmount']);
