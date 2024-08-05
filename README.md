@@ -4,8 +4,8 @@
 
 1. Clone the repository:
     ```bash
-    git clone <your-repo-url>
-    cd <repo-directory>
+    git clone git@github.com:ajaykumar776/volafinance_Assignment.git
+    cd volafinance_Assignment
     ```
 
 2. Install dependencies:
@@ -28,7 +28,7 @@
 ## Technology Stack
 
 - **Laravel**: 10.4
-- **PHP**: 8.1
+- **PHP**: 8.2
 - **Tailwind CSS**: For frontend styling
 - **REST API**: For API endpoints
 
